@@ -1,0 +1,214 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:Arial, sans-serif; background:#f4f6f9; }
+
+.container { display:flex; min-height:100vh; }
+
+/* Dashboard layout: charts left, cards right */
+.dashboard-layout {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+/* Sidebar */
+.sidebar {
+  width:220px; background:#2c3e50; color:#fff; padding:20px;
+  position:fixed;
+  top: 0;
+  left: 0;
+  height:100vh;
+}
+.sidebar h2 { margin-bottom:20px; }
+.sidebar nav a {
+  display:block; 
+  color:#ecf0f1; 
+  text-decoration:none;
+  padding:12px 15px; 
+  margin-bottom:10px; 
+  border-radius:6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.sidebar nav a:hover { 
+  background: #1abc9c;         /* teal hover background */
+  color: #fff;                 /* text pure white */
+  transform: translateX(5px);
+}
+
+/* Active link styling */
+.sidebar nav a.active {
+  background: #3498db;         /* blue highlight for active */
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+  margin-left:220px; padding:20px; flex:1;
+}
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-bottom:20px; }
+.card {
+  background:#fff; padding:20px; border-radius:8px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Charts stacked vertically */
+.chart-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  height: 420px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.chart-box h3 {
+  margin-bottom: 10px;
+}
+
+.chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Charts column stacked vertically */
+.charts-column {
+  flex: 1.2; /* wider space for charts */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards column stacked vertically */
+.cards-column {
+  flex: 1; /* narrower space for cards */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Make cards taller for better alignment */
+.cards-column .card {
+  min-height: 200px;   /* increase height */
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.charts-column .chart-box{
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.cards-column.card h4{
+  margin-bottom: 10px;
+}
+
+/* Table */
+.table-responsive { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; }
+th, td { padding:10px; border-bottom:1px solid #ddd; text-align:left; }
+tr:hover { background:#f9f9f9; }
+button { padding:6px 12px; border:none; background:#3498db; color:#fff; border-radius:4px; cursor:pointer; }
+button:hover { background:#2980b9; }
+
+/* Form */
+section {
+  margin-bottom: 40px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+
+form input, form select, form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+form button {
+  padding: 12px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+form button:hover {
+  background: #4f46e5;
+}
+
+
+#addLead form {
+  background: white;
+  position: center;       
+  padding: 20px;            
+  border-radius: 8px;       
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 600px;         
+}
+#addLead .form-group {
+  margin-bottom: 15px;      
+}
+#addLead label {
+  display: block;           
+  margin-bottom: 6px;       
+  font-weight: bold;        
+}
+#addLead input,
+#addLead textarea,
+#addLead select {
+  width: 100%;              
+  padding: 10px;            
+  border: 1px solid #ccc;   
+  border-radius: 6px;       
+}
+#addLead button {
+  background: #27ae60;      
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#addLead button:hover {
+  background: #1e8449;     
+}
+
+
+.statusSelect.new {
+  background-color: lightgreen;
+}
+.statusSelect.progress {
+  background-color: lightblue;
+}
+.statusSelect.closed {
+  background-color: lightcoral;
+}
+
+
+/* Responsive */
+@media(max-width:768px){
+  .sidebar { position:relative; width:100%; height:auto; }
+  .main-content { margin-left:0; }
+}

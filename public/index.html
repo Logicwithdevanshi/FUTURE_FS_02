@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple CRM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Simple CRM</h2>
+      <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#leads">Leads</a>
+        <a href="#addLead">Add Lead</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Dashboard</h2>
+      <section id="dashboard" class="dashboard-layout">
+        <!-- Left side: charts stacked -->
+         <div class="charts-column">
+          <div class="chart-box"><canvas id="statusChart"></canvas></div>
+          <div class="chart-box"><canvas id="dealsChart"></canvas></div>
+        </div>
+
+        <!-- Right side: summary cards -->
+          <div class="cards-column">
+            <div class="card"><b>Total Leads: </b><span>18</span></div>
+            <div class="card"><b>Contacted Leads: </b><span>7</span></div>
+            <div class="card"><b>Closed Leads: </b><span>5</span></div>
+          </div>
+      </section>
+
+
+      <!-- Leads Table -->
+      <section id="leads" class="card">
+        <h3>All Leads</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th><th>Phone</th><th>Email</th><th>Company</th>
+                <th>Status</th><th>Notes</th><th>Follow-up Date</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <!-- Add Lead Form -->
+      <section id="addLead" class="panel">
+        <h2>Add Lead</h2>
+        <form id="leadForm">
+            <label for="name">Full Name</label>
+           <input id="name" type="text" placeholder="Enter full name" required>
+           
+           <label for="email">Email</label>
+           <input id="email" type="email" placeholder="Enter email address" required>
+           
+           <label for="phone">Phone Number</label>
+           <input id="phone" type="tel" placeholder="Enter phone number" required>
+           <label for="company">Company</label>
+           <input id="company" type="text" placeholder="Enter company name" required>
+           
+           <label for="status">Status</label>
+           <select id="status" required>
+             <option value="New">New</option>
+             <option value="In Progress">In Progress</option>
+             <option value="Closed">Closed</option>
+           </select>
+           
+           <label for="notes">Notes</label>
+           <textarea id="notes" placeholder="Additional notes" required></textarea>
+           
+           <label for="followUp">Follow-up Date</label>
+           <input id="followUp" type="date" required>
+           
+           <button type="submit" onclick="addLead()">Save Lead</button>
+        </form>
+       </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
