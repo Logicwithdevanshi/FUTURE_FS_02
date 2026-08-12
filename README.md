@@ -2,7 +2,7 @@
 A modern and user-friendly CRM Dashboard designed to manage business leads and customer interactions efficiently. This application helps users organize lead information, monitor progress, and maintain follow-up records in one place.
 
 **Project Objective**
-This project was created as part of Task 2 – Client Lead Management System (Mini CRM) under the Full Stack Web Development Internship program by Future Interns.
+This project was created as Client Lead Management System (Mini CRM).
 
 The project focuses on improving practical knowledge in:
 
@@ -46,10 +46,10 @@ The project focuses on improving practical knowledge in:
 **Setup Instructions**
 
 **1. Clone the Repository**
-git clone https://github.com/Logicwithdevanshi/FUTURE_FS_02.git
+git clone https://github.com/Logicwithdevanshi/CRM.git
 
 **2. Open Project Folder**
-cd FUTURE_FS_02
+cd CRM
 
 **3. Install Dependencies**
 npm install
